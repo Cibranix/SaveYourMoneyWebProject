@@ -1,0 +1,62 @@
+<div>
+{{#if isLogged}}
+<div id="opcionesdiv">
+	<div id="opciones">
+		<div id="tituloIntervalo">
+			<p>{{i18n "Intervalo de Tiempo" }}</p>
+		</div>
+		<div id="contenedorTiempo">
+			<input type="date" name="fechaInicio" id="fechaInicio" class="inputFecha" value = '2022-01-12'>
+			<img id="separadorTiempo" src="img/guion.png" alt="guion">
+			<input type="date" name="fechaFin" id="fechaFin" class="inputFecha" value = '2023-01-12'>
+		</div>
+		<div id="tituloCategoria">
+			<p>{{i18n "Categoría"}}</p>
+		</div>
+		<div id="contenedorCategoria">
+			
+			<input type="checkbox" name="filtro" id="filtro" ><label for="filtro" class="filtrar">{{i18n "Filtrar"}}</label>
+			<ul>
+				<li>
+					<input type="checkbox" name="combustible" id="combustible" class="opciones" checked = 'checked'><label for="combustible" class="label-opciones">{{i18n  "Combustible"}}</label>
+				</li>
+				<li>
+					<input type="checkbox" name="alimentacion" id="alimentacion" class="opciones" checked = 'checked'><label for="alimentacion" class="label-opciones">{{i18n "Alimentación"}}</label>
+				</li>
+				<li>
+					<input type="checkbox" name="comunicaciones" id="comunicaciones" class="opciones" checked = 'checked'><label for="comunicaciones" class="label-opciones">{{i18n "Comunicaciones"}}</label>
+				</li>
+				<li>
+					<input type="checkbox" name="suministro" id="suministro" class="opciones" checked = 'checked'><label for="suministro" class="label-opciones">{{i18n "Suministros"}}</label>
+				</li>
+				<li>
+					<input type="checkbox" name="ocio" id="ocio" class="opciones" checked = 'checked'><label for="ocio" class="label-opciones">{{i18n "Ocio"}}</label>
+				</li>
+			</ul>
+	
+		</div>
+	</div>
+</div>
+
+<div id="contentEstructuraAnalisis">
+	
+	<div id="contenedorGraficaLineas" class="grafica">
+		<figure class="highcharts-figure">
+			<div id="containerLinea"></div>
+			<p class="highcharts-description">
+			</p>
+		</figure>
+	</div>
+
+	<div id="contenedorGraficaTarta" class="grafica">
+		<figure class="highcharts-figure">
+			<div id="containerTarta"></div>
+			<p class="highcharts-description">
+			</p>
+		</figure>
+	</div>
+</div>
+{{else}}
+    {{i18n 'Necesitas estar logeado para entrar aquí'}}
+{{/if}}
+</div>

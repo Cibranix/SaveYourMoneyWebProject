@@ -1,0 +1,31 @@
+<tr key="{{id}}">
+{{#if_eq user.currentUser owner}}
+  <td class="priority-2">
+    {{#i18n}}{{type}}{{/i18n}}
+  </td>
+  <td class="priority-3">
+    {{invDate date}}
+  </td>
+  <td class="priority-1">
+    {{amount}}
+  </td>
+  <td class="priority-4">
+    {{description}}
+  </td>
+  <td class="priority-5">
+    {{#if file}}
+    <a href="../uploads/{{owner}}/{{file}}" download="{{splitFile file}}">{{splitFile file}}</a>
+    {{/if}}
+  </td>
+
+  <td class="td-boton">
+    <button class="boton-edit" item="{{id}}">
+      {{i18n "Editar"}}
+    </button>
+
+    <button class="boton-eliminar" item="{{id}}">
+      {{i18n "Eliminar" }}
+    </button>
+  </td>
+{{/if_eq}}
+</tr>

@@ -1,0 +1,55 @@
+<div>
+    {{#if editExpense}}
+    <div id="contenedor-ventana-editar" class="contenedor-emergente">
+        <div id="ventana-editar" class="contenedor ventana-emergente">
+            <div id="editar-header" class="header-ventana-emergente">
+                <h3>{{i18n "Editar Gasto"}}</h3>
+            </div>
+            <span>{{#i18n}}{{sendError}}{{/i18n}}</span>
+            <form id="formulario-editar" class="formulario-emergente" enctype="multipart/form-data" method="POST">
+                <div class="seccion-emergente">
+                <label for="tipo">{{i18n "Tipo"}}</label>
+                <select name="type_exp" id="tipo-editar">
+                    <option selected="selected" value="COMBUSTIBLE">{{i18n "Combustible"}}</option>
+                    <option value="ALIMENTACION">{{i18n "Alimentacion"}}</option>
+                    <option value="COMUNICACIONES">{{i18n "Comunicaciones"}}</option>
+                    <option value="SUMINISTRO">{{i18n "Suministros"}}</option>
+                    <option value="OCIO">{{i18n "Ocio"}}</option>
+                </select>
+                <div class='texto-error'>{{#i18n}}{{type_expError}}{{/i18n}}</div>
+            </div>
+            <div class="seccion-emergente">
+                <label for="fecha">{{i18n "Fecha"}}</label>
+                <input type="date" name="date_exp" id="fecha-editar" >
+                <div class = 'texto-error'>{{#i18n}}{{date_expError}}{{/i18n}}</div>
+            </div>
+            <div class="seccion-emergente">
+                <label for="cantidad">{{i18n "Cantidad"}}</label>
+                <input type="number" name="amount" id="cantidad-editar" value="0">
+                <div class = 'texto-error'>{{#i18n}}{{amountError}}{{/i18n}}</div>
+            </div>
+            <div class="seccion-emergente">
+                <label for="descripcion">{{i18n "Descripción"}}</label>
+                <input type="text" name="description_exp" id="descripcion-editar">
+                <div class = 'texto-error'>{{#i18n}}{{description_expError}}{{/i18n}}</div>
+            </div>
+            
+            <div class="seccion-emergente">
+                <label for="fichero">{{i18n "Fichero"}}</label>
+                <div class="styled-file-select">
+                        <input type="text" disabled placeholder="{{i18n "Elige el fichero (jpg, png, pdf)"}}" id="mostrar"/>
+                        
+                        <input type="file" name="file_exp" id="fichero-editar" onchange="mostrarArchivo('mostrar','fichero-editar')"/>
+                </div>
+                <div class = 'texto-error'>{{#i18n}}{{file_expError}}{{/i18n}}</div>
+            </div>
+
+            <div class="seccion-anadir margen-top">
+                <button id="boton-cancelar-editar" class="boton-anadir boton-eliminar" type="button">{{i18n "Cerrar"}}</button>
+                <input class="boton-anadir" name="submit" id="enviar-editar" type="submit" value="{{i18n "Aceptar"}}"/>
+            </div>
+            </form>
+        </div>
+    </div>
+    {{/if}}
+</div>

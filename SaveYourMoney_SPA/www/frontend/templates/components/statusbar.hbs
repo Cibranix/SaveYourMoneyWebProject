@@ -1,0 +1,40 @@
+<div>
+<div id="menu">
+    <div id="logoCompleto" class="imagenLogo"><a href="#portrait"><img src="img/LogoNombreAzul.png" alt="LogoCompleto"></a></div>
+    <div id="logoReducido" class="imagenLogo"><a href="#portrait"><img src="img/LogoAzul.png" alt="LogoCompleto"></a></div>
+    {{#if isLogged}}
+        <div class="seccion-usuario">
+            <span><img src="img/cuenta.png" alt="imgUser"></span>
+            <p>{{currentUser}}</p>
+        </div>
+        <div id="hamburguesa">
+            <nav>
+                <input type="checkbox" id="check">
+                <label for="check"> ☰ </label>
+                <ul>
+                    <a href="#analisis" id="analisisLink">
+                        <li>{{i18n "Análisis"}}</li>    
+                    </a>
+                    <a href="#expenses" id="crudLink">
+                        <li>{{i18n "Tabla de Gastos"}}</li>
+                    </a>
+                    <a id="logoutLink">
+                        <li class="opcion-salida">{{i18n "Cerrar Sesión"}}</li>
+                    </a> 
+                    <a id="eliminarPerfilLink">
+                        <li class="opcion-salida">{{i18n "Eliminar Perfil"}}</li>
+                    </a>
+                </ul>
+            </nav>
+        </div>
+        {{else}}
+        <div id="sesionMenu">
+            <a href="#login"><button id="iniciarSesion"><h3>{{i18n "Iniciar Sesión"}}</h3></button></a>
+
+            <a href="#register"><button id="registrarse"><h3>{{i18n "Registrarse"}}</h3></button></a>
+        </div>
+
+    {{/if}}
+</div>
+<div class="separador"></div>
+</div>

@@ -1,0 +1,51 @@
+<div>
+<span class="texto-error">{{#i18n}}{{deleteError}}{{/i18n}}</span>
+{{#if user.isLogged}}
+<div id="crudExpenses">
+    <div class="contenedor" id="controlador-tabla">
+        <button id="anadir-gasto" class="boton-controlador">
+            {{i18n "Añadir"}}
+        </button>
+        <button id="downloadCSV" class="boton-controlador">
+            {{i18n "Descargar"}}
+        </button>
+    </div>
+
+    <div id="contenedor-tabla" class="contenedor">
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th class="priority-2">{{i18n "Tipo"}}</th>
+                    <th class="priority-3"> {{i18n "Fecha"}}</th>
+                    <th class="priority-1"> {{i18n "Cantidad"}}</th>
+                    <th class="priority-4"> {{i18n "Descripción"}}</th>
+                    <th class="priority-5">{{i18n "Fichero"}}</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each expenses}}
+                    <tr fronty-component="ExpenseRowComponent" key="{{id}}" model="expenses[{{@index}}]" id="item-{{id}}"></tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <div id="itemPag" class="seccion-emergente">
+        <button id="pagAnt" class="boton-controlador">{{i18n "Anterior"}}</button>
+        <span id="estadoPag"></span>
+        <button id="pagSig" class="boton-controlador">{{i18n "Siguiente"}}</button>
+        <select id="selectRowPerPage">
+            <option value="5">5</option>
+            <option value="7">7</option>
+            <option value="10">10</option>
+        </select>
+    </div>
+
+    <div id="ventana-emergente"></div>
+    <div id="ventana-emergente-editar"></div>
+</div>
+{{else}}
+    {{i18n 'Necesitas estar logeado para ver los gastos'}}
+{{/if}}
+</div>
