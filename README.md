@@ -1,5 +1,5 @@
 # SaveYourMoneyWebProject
-Safe Your Money is a project website that allows the management of expenses. This project has 2 versions: one following the MVC architecture and the other, the SPA architecture.
+Safe Your Money is a project website that allows the management of expenses. This project has 2 versions: one following the MVC architecture ([mvcblog](https://github.com/lipido/mvcblog)) and the other following the SPA architecture ([mvcblog-front](https://github.com/lipido/mvcblog-front)).
 
 - A docker with PHP, Apache and mySQL provided by the teacher was used. 
 - There is the mySQL script used for importing the database.
